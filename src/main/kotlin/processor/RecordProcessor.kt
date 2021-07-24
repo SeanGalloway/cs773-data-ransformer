@@ -45,7 +45,7 @@ class RecordProcessor {
             highestFileRead = type2Records.filter { it.fileActivity == FileActivity.R }.maxOfOrNull { it.filename } ?: "NA",
             numberOfFileReads = type2Records.filter { it.fileActivity == FileActivity.R }.size,
             lowestFileWrite = type2Records.filter { it.fileActivity == FileActivity.RW }.minOfOrNull { it.filename } ?: "NA",
-            highestFileWrite = type2Records.filter { it.fileActivity == FileActivity.RW }.minOfOrNull { it.filename } ?: "NA",
+            highestFileWrite = type2Records.filter { it.fileActivity == FileActivity.RW }.maxOfOrNull { it.filename } ?: "NA",
             numberOfFileWrites = type2Records.filter { it.fileActivity == FileActivity.RW }.size,
             mostUsedPrinter = type2Records.selectMostCommon { it.printerUsed } ?: "NA",
             mostPagesPrinted = type2Records.maxOf { it.pagesPrinted },
